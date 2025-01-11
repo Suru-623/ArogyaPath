@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Arogyapath</title>
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Favicon (optional) -->
+    <link rel="icon" href="static/favicon.ico" type="image/x-icon">
+    <style>
+        .radio-inputs {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 0.5rem;
+            box-sizing: border-box;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+            padding: 0.25rem;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .radio-inputs .radio {
+            flex: 1 1 auto;
+            text-align: center;
+        }
+
+        .radio-inputs .radio input {
+            display: none;
+        }
+
+        .radio-inputs .radio .name {
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            border: none;
+            padding: .8rem 0.5rem;
+            color: rgba(51, 65, 85, 1);
+            transition: all .15s ease-in-out;
+        }
+
+        .radio-inputs .radio input:checked + .name {
+            background-color: #fff;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="min-h-screen w-full relative">
+
+{#<div class="w-full min-h-screen h-full relative">#}
+<!-- Background Video -->
+{#    <div class="w-full min-h-screen h-full relative">#}
+<!-- Background Video -->
+<div class="absolute w-full h-full z-[-1]">
+    <video id="backgroundVideo" class="w-full h-full object-cover" autoplay loop muted preload="auto">
+        <source src="static/bg.mp4" type="video/mp4">
+    </video>
+
+    <!-- Color Overlay -->
+    <div class="absolute top-0 left-0 w-full h-full bg-black opacity-[93%]"></div>
+</div>
+
+<header
+        class="bg-gray-900 border border-gray-800 text-white p-2 absolute top-[2rem] left-0 right-0 w-[80%] mx-auto rounded-full flex items-center justify-between sticky z-50">
+    <!--    Logo-->
+    <div class="rounded-full flex items-center gap-2 cursor-pointer">
+        <img src="static/logo.png" alt="Logo" class="w-[6rem] h-[4rem] rounded-full object-cover">
+        <h1 class="text-xl font-bold text-gray-600">Arogyapath</h1>
+    </div>
+
+    <!--    Navbar-->
+    <nav>
+        <ul class="flex items-center gap-2">
+            <li><a href="/"
+                   class="bg-green-500 text-black px-5 py-4 rounded-[15px] hover:bg-gray-300 hover:text-gray-900 cursor-pointer">Home</a>
+            </li>
+            <li><a href="/about"
+                   class="text-gray-600 px-5 py-4 rounded-[15px] hover:bg-gray-300 hover:text-gray-900 cursor-pointer">About</a>
+            </li>
+            <li><a href="/contact"
+                   class="text-gray-600 px-5 py-4 rounded-[15px] hover:bg-gray-300 hover:text-gray-900 cursor-pointer">News</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--    Get started-->
+    <button
+            onclick={}
+            class="bg-red-500 px-7 py-[1.2rem] rounded-full hover:bg-red-700 hover:scale-105 duration-300 shadow-grey-700 font-bold cursor-pointer">
+        Get Started
+    </button>
+
+</header>
+
+<main class="grid grid-cols-1 md:grid-cols-[56%_40%] gap-[2rem] mx-[3rem] ">
+    <div class="mt-[4rem]"></div>
+    <div class="mt-[4rem]"></div>
+    <div class="">
+        <h2 class="text-5xl font-bold text-green-500 text-left my-8">AI-Powered Personalized Health
+            Solutions</h2>
+        <p class="text-white text-2xl text-left">Discover personalized health solutions with advanced AI-powered
+            recommendations tailored to your unique symptoms and needs.</p>
+    </div>
+
+    <!--    form-->
+    <form action="/predict" method="post"
+          class="relative bg-white bg-opacity-5 backdrop-blur-md shadow-lg border border-white border-opacity-10 p-6 rounded-[20px]">
+        <div class="flex flex-col gap-2">
+            <label for="symptoms" class="text-white text-2xl">Symptoms</label>
+            <input id="symptoms" name="symptoms" type="text"
+                   placeholder="Enter Symptoms such as fever, cough, sore throat, etc."
+                   class="px-4 py-3 bg-gray-800 border border-gray-700 text-white text-xl rounded-[15px]"
+                   value="{{ symptoms }}">
+        </div>
+        <br>
+        <div class='flex flex-col w-full items-start justify-start gap-2'>
+            <label
+                    class='mb-0.5 text-gray-400 font-semibold text-sm md:text-lg'>Select AI System
+                Results</label>
+            <div class="radio-inputs border border-gray-700 rounded-[10px]">
+                <label class="radio">
+                    <input
+                            type="radio"
+                            name="suggestion"
+                            value="Disease"
+                            {% if suggestion == 'Disease' %} checked="checked" {% endif %}
+                    />
+                    <span class="name">Disease</span>
+                </label>
+                <label class="radio">
+                    <input
+                            type="radio"
+                            name="suggestion"
+                            value="Description"
+                            {% if suggestion == 'Description' %} checked="checked" {% endif %}
+                    />
+                    <span class="name">Description</span>
+                </label>
+                <label class="radio">
+                    <input
+                            type="radio"
+                            name="suggestion"
+                            value="Precaution"
+                            {% if suggestion == 'Precaution' %} checked="checked" {% endif %}
+                    />
+                    <span class="name">Precaution</span>
+                </label>
+
+                <label class="radio">
+                    <input
+                            type="radio"
+                            name="suggestion"
+                            value="Medications"
+                            {% if suggestion == 'Medications' %} checked="checked" {% endif %}
+                    />
+                    <span class="name">Medications</span>
+                </label>
+
+                <label class="radio">
+                    <input
+                            type="radio"
+                            name="suggestion"
+                            value="Workouts"
+                            {% if suggestion == 'Workouts' %} checked="checked" {% endif %}
+                    />
+                    <span class="name">Workouts</span>
+                </label>
+
+                <label class="radio">
+                    <input
+                            type="radio"
+                            name="suggestion"
+                            value="Diets"
+                            {% if suggestion == 'Diets' %} checked="checked" {% endif %}
+                    />
+                    <span class="name">Diets</span>
+                </label>
+            </div>
+        </div>
+        <br>
+
+
+        {% if result %}
+            <h3 class="text-2xl text-green-500 text-left mb-1 font-semibold">AI Result</h3>
+            <div class="w-full border border-gray-700 text-white text-xl rounded-[15px] p-2 mb-4
+        {% if condition == 'red' %} bg-red-200
+        {% elif condition == 'yellow' %} bg-yellow-200
+        {% else %} bg-green-200 {% endif %}">
+                {% if suggestion == 'Workouts' or suggestion == 'Precaution' or suggestion == 'Diets' or suggestion == 'Medications' %}
+                    <ul style="list-style-type: disc" class="ml-6">
+                        {% for i in result %}
+                            <li class="text-black text-xl text-left">{{ i }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p class="text-black text-xl text-left">{{ result }}</p>
+                {% endif %}
+            </div>
+        {% endif %}
+
+
+        {% if message %}
+            <p id="prompt" class="text-red-500 text-xl text-left mb-2">{{ message }}</p>
+        {% endif %}
+
+
+        <div class="grid {% if result %} grid-cols-[70%_28%] {% else %} grid-cols-[100%] {% endif %} gap-2">
+            <button type="submit"
+                    class="bg-green-700 w-full text-xl text-white px-2 py-[1rem] rounded-[20px] hover:bg-green-600 hover:scale-[1.02] duration-300 shadow-grey-700 font-bold cursor-pointer">
+                Predict
+            </button>
+            {% if result %}
+                <a type="reset" href="/"
+                   class="bg-blue-300 w-full text-xl text-center text-white px-2 py-[1rem] rounded-[20px] hover:bg-blue-600 hover:scale-[1.02] duration-300 shadow-grey-700 font-bold cursor-pointer">Reset</a>
+            {% endif %}
+        </div>
+
+    </form>
+
+    <div class="my-4"></div>
+
+</main>
+
+{#    </div>#}
+
+{#</div>#}
+
+<script>
+    document.getElementById('backgroundVideo').playbackRate = 0.6;
+</script>
+</body>
+</html>

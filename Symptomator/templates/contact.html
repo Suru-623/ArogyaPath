@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare News and Alerts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #575763;
+            color: #333;
+        }
+        .news-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .news-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .news-header h1 {
+            font-size: 2.5rem;
+            color: #5a67d8;
+            margin-bottom: 10px;
+        }
+        .news-header p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .news-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .news-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        .news-content {
+            padding: 15px;
+        }
+        .news-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .news-description {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .news-link {
+            display: inline-block;
+            text-decoration: none;
+            color: #5a67d8;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+        .news-link:hover {
+            color: #3c52b2;
+        }
+    </style>
+</head>
+<body>
+    <div class="news-container">
+        <div class="news-header">
+            <h1>Healthcare News and Alerts</h1>
+            <p>Stay updated with the latest health news, research, and alerts around the world.</p>
+        </div>
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="news-image" style="background-image: url('https://img.lb.wbmdstatic.com/vim/live/webmd/consumer_assets/site_images/articles/health_tools/vaccine_preventable_disease_slideshow/1800ss_getty_rm_illustration_of_whooping_cough_infection.jpg?resize=540px:*&output-quality=75');"></div>
+                <div class="news-content">
+                    <h3 class="news-title">Whooping Cough and Newborns: How to Set Boundaries With Visitors</h3>
+                    <p class="news-description">Whooping cough is making a dangerous comeback across the U.S., with cases soaring to 4.5 times more this year than last, according to the CDC. For parents of newborns, this highly contagious respiratory illness poses a serious threat – and protecting your baby starts with setting clear boundaries.</p>
+                    <a href="https://www.webmd.com/parenting/baby/news/20241206/whooping-cough-and-newborns-how-to-set-boundaries-with-visitors" class="news-link">Read More</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <div class="news-image" style="background-image: url('https://img.lb.wbmdstatic.com/vim/live/webmd/consumer_assets/site_images/articles/health_tools/adapting_to_life_with_advanced_gist_slideshow/1800ss_getty_rf_support_group.jpg?resize=540px:*&output-quality=75');"></div>
+                <div class="news-content">
+                    <h3 class="news-title">U.S. Life Expectancy to Fall Behind That of Global Peers by 2050</h3>
+                    <p class="news-description">Life expectancy in the United States is improving a little, but not as much as that of many other high-income and some middle-income nations, a new study says.U.S. life expectancy is expected to go from 78.3 years in 2022, to 79.9 years in 2035, to 80.4 years in 2050, according to forecasting models from the University of Washington’s Institute for Health Metrics and Evaluation.</p>
+                    <a href="https://www.webmd.com/healthy-aging/news/20241206/us-life-expectancy-to-fall-behind-that-of-global-peers-by-2050" class="news-link">Read More</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <div class="news-image" style="background-image: url('https://img.lb.wbmdstatic.com/vim/live/webmd/consumer_assets/site_images/articles/health_tools/2024_ib_ai_slideshows/5_Shutterstock_2400479483_1800x1200.jpg?resize=540px:*&output-quality=75');"></div>
+                <div class="news-content">
+                    <h3 class="news-title">FDA Approves New Drug for Lung and Pancreatic Cancers</h3>
+                    <p class="news-description">The FDA has granted accelerated approval to zenocutuzumab, a new drug for adults with advanced non-small-cell lung cancer (NSCLC) or pancreatic cancer. The drug is the first comprehensive treatment approved for cancers with NRG1 fusion that have spread or that can't be surgically removed and have worsened after previous treatments.</p>
+                    <a href="https://www.webmd.com/cancer/news/20241205/fda-approves-new-drug-lung-pancreatic-cancer" class="news-link">Read More</a>
+                </div>
+            </div>
+         
+                
+           
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
